@@ -13,8 +13,9 @@ for file in "$@"; do
     exit 2
   fi
 
-  sed -e "s/File/$file/g" $HOME/Documents/templates/template_py.py > "$file"_temp
-  sed -e "s/date/$today/g" "$file"_temp > "$file".py
+  sed -e "s/File/$file/g" $HOME/Documents/templates/template_py.py > "$file"_temp1
+  sed -e "s/date/$today/g" "$file"_temp1 > "$file"_temp2
+  sed -e "s/USER/$USER/g" "$file"_temp2 > "$file".py
 
   rm "$file"_temp
   

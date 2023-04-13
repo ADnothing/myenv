@@ -30,8 +30,9 @@ for file in "$@"; do
 
   #CREATING THE .c
   
-  sed -e "s/file/$file/g" $HOME/Documents/templates/template_c.c > "$file"_temp
-  sed -e "s/date/$today/g" "$file"_temp > $file.c
+  sed -e "s/file/$file/g" $HOME/Documents/templates/template_c.c > "$file"_temp1
+  sed -e "s/date/$today/g" "$file"_temp1 > "$file"_temp2
+  sed -e "s/USER/$USER/g" "$file"_temp2 > $file.c
 
   if [ ! -f "$file.c" ]; then
     echo -e "ERROR: Failed to create $file.c"
@@ -52,7 +53,7 @@ for file in "$@"; do
       echo "" >> Makefile
     fi
   
-  rm "$file"_temp
+  rm "$file"_temp*
   
   
 done
