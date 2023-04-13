@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-#Adrien Anthore, date
+#USER, date
 #File.py
 #main python file
 

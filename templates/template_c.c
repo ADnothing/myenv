@@ -1,5 +1,5 @@
 /*
-Adrien Anthore, date
+USER, date
 
 Compilation :
 gcc -ansi -Wall -Wextra -o file.x file.c 
