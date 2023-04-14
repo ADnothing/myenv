@@ -16,7 +16,7 @@ if [ "$ans" == y ]; then
     exit 2
   fi
   
-  sed -e "s/File/main/g" $HOME/Documents/templates/template_mainpy.py > temp1
+  sed -e "s/File/main/g" $HOME/templates/template_mainpy.py > temp1
   sed -e "s/date/$today/g" temp1 > temp2
   sed -e "s/USER/$USER/g" temp2 > main.py
   
@@ -29,7 +29,7 @@ for file in "$@"; do
     exit 3
   fi
 
-  sed -e "s/File/$file/g" $HOME/Documents/templates/template_py.py > "$file"_temp1
+  sed -e "s/File/$file/g" $HOME/templates/template_py.py > "$file"_temp1
   sed -e "s/date/$today/g" "$file"_temp1 > "$file"_temp2
   sed -e "s/USER/$USER/g" "$file"_temp2 > "$file".py
 
