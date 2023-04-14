@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 source_dir="$HOME/bin"
-destination_dir="$HOME/Documents/backup_bin"
+destination_dir="$HOME/backup_bin"
 ans=""
 
 
