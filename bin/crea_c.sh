@@ -18,7 +18,7 @@ echo -n "Create a Makefile ? (y/n) " ; read ans
 if [ $ans == y ]; then
   touch Makefile
   echo -n "Enter general libraries (i.e. -lm -lgsl ...) : " ; read lib
-  sed -e "s/libs/$lib/g" $HOME/Documents/templates/template_Makefile > Makefile
+  sed -e "s/libs/$lib/g" $HOME/templates/template_Makefile > Makefile
 fi
 
 for file in "$@"; do
@@ -30,7 +30,7 @@ for file in "$@"; do
 
   #CREATING THE .c
   
-  sed -e "s/file/$file/g" $HOME/Documents/templates/template_c.c > "$file"_temp1
+  sed -e "s/file/$file/g" $HOME/templates/template_c.c > "$file"_temp1
   sed -e "s/date/$today/g" "$file"_temp1 > "$file"_temp2
   sed -e "s/USER/$USER/g" "$file"_temp2 > $file.c
 
