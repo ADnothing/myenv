@@ -1,4 +1,4 @@
-# Bash Scientific Environement
+# Bash Scientific Environment
 
 As a master student in Space Science and technologies, I have to use a lot my computer and programming languages. This repository contains the scripts I use in my bin in order to save time while working. My goal is to create a maximum of those can of scripts for different needs in different languages and save them here so everyone that found it useful can use it too.
 
