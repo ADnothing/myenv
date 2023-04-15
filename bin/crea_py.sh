@@ -16,11 +16,10 @@ if [ "$ans" == y ]; then
     exit 2
   fi
   
-  sed -e "s/File/main/g" $HOME/templates/template_mainpy.py > temp1
-  sed -e "s/date/$today/g" temp1 > temp2
-  sed -e "s/USER/$USER/g" temp2 > main.py
+  bash build_py.sh main
+  sed -i "s/date/$today/g" main.py
+  sed -i "s/USER/$USER/g" main.py
   
-  rm temp*
 fi
 
 for file in "$@"; do
@@ -29,11 +28,11 @@ for file in "$@"; do
     exit 3
   fi
 
-  sed -e "s/File/$file/g" $HOME/templates/template_py.py > "$file"_temp1
-  sed -e "s/date/$today/g" "$file"_temp1 > "$file"_temp2
-  sed -e "s/USER/$USER/g" "$file"_temp2 > "$file".py
+  bash build_py.sh $file
+  sed -i "s/date/$today/g" "$file".py
+  sed -i "s/USER/$USER/g" "$file".py
+  sed -i "s/File/$file/g" "$file".py
 
-  rm "$file"_temp*
   
   if [ ! -f "$file.py" ]; then
     echo -e "ERROR: Failed to create $file.c"
@@ -49,7 +48,7 @@ done
 if [ "$ans" == y ]; then
   echo "" >> main.py
   echo 'if __name__ == "__main__":' >> main.py
-  echo "" >> main.py
+  echo -e "\t" >> main.py
 fi
 
 exit 0
