@@ -7,3 +7,4 @@ If you want to use my scripts : make sure to change the path in all the script f
   - alias cbuild='bash crea_c.sh'
   - alias pybuild='bash crea_py.sh'
   - alias save_bin='bash save_bin.sh'
+  - alias dat2csv='bash dat_2_csv.sh'
